@@ -1,0 +1,14 @@
+:root {
+    --color-primary: #212C65;
+    --color-secondary: #01A1DD;
+    --color-text: #000000;
+    --color-accent: #01A1DD;
+}
+
+.aux {
+    border: 1px solid red;
+}
+
+.aux2 {
+    border: 1px solid blue;
+}

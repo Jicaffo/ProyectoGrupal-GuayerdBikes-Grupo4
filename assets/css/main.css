@@ -1,6 +1,9 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800");
 @import url("colores.css");
+@import url("index.css");
+@import url("productos.css");
+@import url("contacto.css");
 
 /*
 	Verti by HTML5 UP
@@ -2619,7 +2622,7 @@ input, select, textarea {
 			}
 
 			#banner-wrapper {
-				padding: 0 15px 0 15px;
+				padding: 0;
 			}
 
 			#features-wrapper {

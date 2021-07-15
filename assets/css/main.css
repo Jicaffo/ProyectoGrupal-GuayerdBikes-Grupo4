@@ -135,7 +135,7 @@ input, select, textarea {
 		}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: var(--color-text);
+		color: var(--color-primary);
 		font-weight: 800;
 	}
 
@@ -1916,7 +1916,8 @@ input, select, textarea {
 		position: fixed;			  /*LUCHO*/
 		left: 0;					  /*LUCHO*/	
 		right: 0;                     /*LUCHO*/
-		top: 0;			
+		top: 0;	
+		background-color: #fff;		
 	}
 
 	#features-wrapper {
@@ -1998,7 +1999,7 @@ input, select, textarea {
 					transition: background-color .25s ease-in-out;
 					font-weight: 800;
 					letter-spacing: 0.025em;
-					color: var(--color-text);
+					color: var(--color-secondary);
 					text-decoration: none;
 					border-radius: 6px;
 					padding: 0.5em 1em 0.5em 1em;
@@ -2009,15 +2010,15 @@ input, select, textarea {
 				}
 
 				#nav ul li:hover a, #nav ul li:hover span {
-					background: #fff;
+					background: var(--color-background);
 				}
 
 				#nav ul li.active a, #nav ul li.active span {
-					background: var(--color-primary);
+					background: var(--color-secondary);
 				}
 
 				#nav ul li.current a {
-					background: var(--color-primary);
+					background: var(--color-secondary);
 					color: var(--color-background);
 				}
 

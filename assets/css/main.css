@@ -1920,9 +1920,13 @@ input, select, textarea {
 	}
 
 	#main-wrapper {
+		border: solid 1px red;    /*EDITADO ABRIL-LUCHO*/
+		margin: 5px;				/*EDITADO ABRIL-LUCHO*/	
 		background: #fff;
 		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
 		padding: 5em 0 5em 0;
+		display:flex;				/*EDITADO ABRIL-LUCHO*/
+		justify-content: center;	/*EDITADO ABRIL-LUCHO*/	
 	}
 
 	#footer-wrapper {
@@ -2298,7 +2302,7 @@ input, select, textarea {
 
 		/* Content */
 
-			#content {
+			#content {				
 				border-bottom: solid 1px #e8e8e8;
 				padding-bottom: 4em;
 				margin-bottom: 0 !important;

@@ -1941,7 +1941,8 @@ input, select, textarea {
 		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
 		padding: 10em 0 5em 0;		/*LUCHO*/
 		display:flex;				/*EDITADO ABRIL-LUCHO*/
-		justify-content: center;	/*EDITADO ABRIL-LUCHO*/	
+		flex-direction: column;		/*LUCHO*/
+		align-items: center;
 	}
 
 	#footer-wrapper {

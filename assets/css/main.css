@@ -1515,7 +1515,7 @@ input, select, textarea {
 		form input[type="password"]:focus,
 		form select:focus,
 		form textarea:focus {
-			border-color: #0090c5;
+			border-color: var(--color-accent);
 		}
 
 	form input[type="text"],

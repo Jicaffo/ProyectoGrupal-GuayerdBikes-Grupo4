@@ -61,33 +61,40 @@
 						<div id="content">
 
 							<!-- Content -->
-								<article>
+							<!-- Comienzo del formulario-->
+							<h2>Contacto</h2>
+							<form action="https://ptsv2.com/t/jicaffo/post" method="GET" class="form-contacto">
+								<div class="horizontal">
+									<label for="nombre">Nombre: </label>	
+									<input class= "controls" type="text" name="nombre" id="nombre" placeholder="Pedro"/>
+								</div>
+								<div class="horizontal">
+									<label for="email">Email: </label>
+									<input class= "controls" type="email" name="Email" id="email" placeholder="nombre@empresa.com"/>
+								</div>
+								<div class="horizontal">
+									<label for="tema">Tema: </label>
+									<select class= "controls" name="Tema" id="tema">
+												<option value="venta">Venta</option>
+												<option value="trabajo">Trabajo</option>
+												<option value="reparacion">Repracion</option>
+												<option value="otros">Otros</option>
+									</select>
+								</div>
+								<div class="horizonal">
+									<label for="mensaje">Mensaje: </label>
+									<textarea class="controls" name="Mensaje" cols="30" rows="10" id="mensaje"></textarea>
+								</div>
 
-									<h2>No Sidebar</h2>
+                                <div class="horizonal">
+									<button class="botons" type="submit" name="Enviar">Enviar</button>
+								</div>
+							</form>	
+							<!--Fin del formulario-->
+						
+							<h2>Mapa</h2>
 
-									<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
-									Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat.
-									Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
-									consequat etiam lorem ipsum dolor sit amet nullam.</p>
-
-									<h3>More intriguing information</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ac quam risus, at tempus
-									justo. Sed dictum rutrum massa eu volutpat. Quisque vitae hendrerit sem. Pellentesque lorem felis,
-									ultricies a bibendum id, bibendum sit amet nisl. Mauris et lorem quam. Maecenas rutrum imperdiet
-									vulputate. Nulla quis nibh ipsum, sed egestas justo. Morbi ut ante mattis orci convallis tempor.
-									Etiam a lacus a lacus pharetra porttitor quis accumsan odio. Sed vel euismod nisi. Etiam convallis
-									rhoncus dui quis euismod. Maecenas lorem tellus, congue et condimentum ac, ullamcorper non sapien.
-									Donec sagittis massa et leo semper a scelerisque metus faucibus. Morbi congue mattis mi.
-									Phasellus sed nisl vitae risus tristique volutpat. Cras rutrum commodo luctus.</p>
-
-									<p>Phasellus odio risus, faucibus et viverra vitae, eleifend ac purus. Praesent mattis, enim
-									quis hendrerit porttitor, sapien tortor viverra magna, sit amet rhoncus nisl lacus nec arcu.
-									Suspendisse laoreet metus ut metus imperdiet interdum aliquam justo tincidunt. Mauris dolor urna,
-									fringilla vel malesuada ac, dignissim eu mi. Praesent mollis massa ac nulla pretium pretium.
-									Maecenas tortor mauris, consectetur pellentesque dapibus eget, tincidunt vitae arcu.
-									Vestibulum purus augue, tincidunt sit amet iaculis id, porta eu purus.</p>
-
-								</article>
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.025694714748!2d-58.38009258432071!3d-34.60351176499516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb18aae2784f%3A0x5b151f326a3f319e!2sAvenida%20Corrientes!5e0!3m2!1ses-419!2sar!4v1626391050642!5m2!1ses-419!2sar" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
 						</div>
 					</div>

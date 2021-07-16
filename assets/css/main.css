@@ -1786,7 +1786,7 @@ input, select, textarea {
 		background: #fff;
 		border-radius: 6px;
 		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
-		padding: 2em;
+		padding: 2em; /*MODIFICACION JUAN: Comentar esto quita los márgenes alrededor del banner (de hacer quitar tambien en #banner)*/
 	}
 
 		.box.feature {
@@ -1918,6 +1918,16 @@ input, select, textarea {
 		right: 0;                     /*LUCHO*/
 		top: 0;	
 		background-color: #fff;		
+		/*MODIFICACION JUAN: Deja el entramado de fondo original en en header */
+		/*background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+		background-image: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(255, 0, 0, 0)), url("images/bg01.png");
+		background-color: var(--color-background);
+		background-position: top left, top left;
+		background-repeat: repeat-x, repeat;
+		background-size: 100% 30em, auto;
+		z-index: 1;*/
 	}
 
 	#features-wrapper {
@@ -2093,7 +2103,7 @@ input, select, textarea {
 
 	#banner {
 		position: relative;
-		padding: 4.5em;
+		padding: 4.5em; /*MODIFICACION JUAN: Comentar esto quita los márgenes alrededor del banner (de hacer quitar tambien en .box)*/
 	}
 
 		#banner h2 {

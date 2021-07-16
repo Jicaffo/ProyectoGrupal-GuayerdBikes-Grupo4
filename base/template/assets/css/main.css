@@ -198,6 +198,7 @@ input, select, textarea {
 		margin: 0 auto;
 		max-width: 100%;
 		width: 1400px;
+		background: 1px solid red;
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -2686,3 +2687,17 @@ input, select, textarea {
 			}
 
 	}
+
+/* AGREGADO PRUEBAS JUAN */
+	.border-red {
+		border: 1px solid red;
+	}
+
+	.border-blue {
+		border: 1px solid blue;
+	}
+
+	.border-green {
+		border: 1px solid green;
+	}
+	

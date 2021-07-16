@@ -151,6 +151,10 @@ input, select, textarea {
 		line-height: 1em;
 	}
 
+	h2#padding {
+		padding-top: 4em;  /*LUCHO*/
+	}
+
 	h3 {
 		font-size: 1.35em;
 		margin: 0 0 1em 0;
@@ -1935,14 +1939,14 @@ input, select, textarea {
 	}
 
 	#main-wrapper {
-		border: solid 1px red;    /*EDITADO ABRIL-LUCHO*/
-		margin: 5px;				/*EDITADO ABRIL-LUCHO*/	
+		/* border: solid 1px red;    EDITADO ABRIL-LUCHO */
+		/* margin: 5px;				EDITADO ABRIL-LUCHO	 */
 		background: #fff;
 		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
-		padding: 10em 0 5em 0;		/*LUCHO*/
+		/* padding: 10em 0 5em 0;		LUCHO */
 		display:flex;				/*EDITADO ABRIL-LUCHO*/
 		flex-direction: column;		/*LUCHO*/
-		align-items: center;
+		/* align-items: center; */
 	}
 
 	#footer-wrapper {
@@ -2278,8 +2282,8 @@ input, select, textarea {
 		/* Wrappers */
 
 			#header-wrapper {
-				padding: 3em 0 1em 0;
-				text-align: center;
+				padding: 3em 0 1em 0; /*LUCHO*/
+				text-align: center;				
 			}
 
 			#footer-wrapper {
@@ -2644,7 +2648,7 @@ input, select, textarea {
 		/* Wrappers */
 
 			#header-wrapper {
-				padding: 3em 0 1.5em 0;
+				padding: 1.5em 0 1.5em 0;
 			}
 
 			#banner-wrapper {

@@ -1,45 +1,39 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-​
 .form-contacto { 
-    width: 800px;   
-    background: var(--color-background); /*ver color caja  */
-    padding: 30px;
-    border: 4px solid green;
+    width: 600px;
     margin: auto;
+    background: var(--color-background); /*ver color caja  */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-block-start: 72px;
+    margin-block-end: 72px;
 }
 
 form div label {
-    /*border: 1px solid red;/**/
-    width: 50%;
     color: var(--color-primary);
+    font-size: medium;
 }
 
 .controls, #nombre, #email{
-    width: 300px; 
+    width: 450px;
     background: var(--color-background);
     border: 3px solid var(--color-primary);
-    width: 50%;
 }
-​
-​
-.form-register p {    
-    height: 40px;
-    text-align: center;
-}
-​
+
 .horizontal {
-   display: flex;
-   width: 100%;
-   justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
+}
+
+.only-button{
+    justify-content: end;
 }
 
 .botons {
     width: 300px;
-    margin-top: 22.73px;
-    margin-bottom: 72px;
 }
 
+#map {
+    display: block;
+    margin: auto;
+}

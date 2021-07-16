@@ -1665,7 +1665,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background: var(--color-primary);
+			background: var(--color-accent);
 		}
 
 		input[type="button"]:active,
@@ -2011,6 +2011,7 @@ input, select, textarea {
 
 				#nav ul li:hover a, #nav ul li:hover span {
 					background: var(--color-background);
+					color: var(--color-primary);
 				}
 
 				#nav ul li.active a, #nav ul li.active span {
@@ -2019,6 +2020,11 @@ input, select, textarea {
 
 				#nav ul li.current a {
 					background: var(--color-secondary);
+					color: var(--color-background);
+				}
+
+				#nav ul li.current:hover a {
+					background: var(--color-primary);
 					color: var(--color-background);
 				}
 

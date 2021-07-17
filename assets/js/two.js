@@ -7,9 +7,9 @@
 // 1. Si no confirmó, preguntar si quiere recibir mails con novedades.
 // 2. Guardar la respuesta en el localStorage.
 
-if (!localStorage.getItem("recibirNovedades")) {
+if (!localStorage.getItem("recibirNovedades") && localStorage.getItem("mail")) {
 
-    let recibirNovedades = confirm("¿Desea recibir novedades de nuestro sitio web en su correo-e?");
+    let recibirNovedades = confirm("¿Desea recibir novedades de nuestro sitio web en su e-mail?");
     
     localStorage.setItem("recibirNovedades", recibirNovedades );
     

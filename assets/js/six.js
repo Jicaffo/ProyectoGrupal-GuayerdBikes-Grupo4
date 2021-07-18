@@ -46,19 +46,19 @@ function promocion(promo){
 function codigoPromo(opcion){
     if (localStorage.getItem("nombre")){
         let nombre = localStorage.getItem("nombre");
-        alert("Estimado "+nombre+" Gracias por elegirnos! \nLe obsequiamos el código "+opcion+" con su compra");
+        alert("Estimado "+nombre+" Gracias por elegirnos! \nLe obsequiamos el código "+opcion+" con su compra")
     }
 }
 
-
+function alerta(){
+    aleatorio(1,5);
+    promocion(promo);
+    codigoPromo(opcion)
+}
 
 var min = 1;
 var max = 5;
 let promo;  
 let nro;      
-aleatorio(1,5);
 
-promocion(promo);
-codigoPromo(opcion);
-
-
+setTimeout(alerta,1000);

@@ -7,7 +7,7 @@
 
 if ( !localStorage.getItem("guardarDatos") ){
 
-    let guardarDatos = confirm("Desea guardar sus datos?");
+    let guardarDatos = confirm("¿Le gustaría registrarse en nuestro portal?");
 
     localStorage.setItem("guardarDatos", guardarDatos);   
 
@@ -30,11 +30,11 @@ if ( !localStorage.getItem("guardarDatos") ){
         
         while( mail === "" || mail === null || !mail.includes(".") || !mail.includes("@") ){
 
-            mail = prompt("Ingrese su mail");
+            mail = prompt("Ingrese su dirección de e-mail");
 
             if ( mail === "" || mail === null || !mail.includes(".") || !mail.includes("@") ){
 
-                alert("Ingrese un mail válido.")
+                alert("Ingrese un e-mail válido.")
             }
         }
 

@@ -19,47 +19,6 @@ Math.floor(Math.random() * MAX) + MIN;
 Donde MAX es el valor máximo del rango y MIN el mínimo
 */
 
- 
-
-var max = 5;
-var min = 1;
-let opcion;
-promo = Math.floor(Math.random() * max) + min;
-
-if (promo === 1){
-    opcion = "5HOTSALE para obtener un 5% de descuento";
-    
-}   
- if (promo === 2){
-     opcion = "10HOTSALE para obtener un 10% de descuento";
-     
- }
-  if (promo === 3){
-      opcion = "15HOTSALE para obtener un 15% de descuento"; 
-        
-  }
-   if (promo === 4){
-       opcion = "20HOTSALE para obtener un 20% de descuento";
-       
-   }
-    if (promo === 5){
-        opcion = "25HOTSALE para obtener un 25% de descuento";
-        
-    }
-
-
-if (localStorage.getItem("nombre")){
-    let nom = localStorage.getItem("nombre");
-    let opc = opcion;
-    alert("Estimado "+nom+" Gracias por elegirnos! \nLe obsequiamos el código "+opc+" con su compra");
-}
-
-/*
-Version
-*/
-
-/*
-
 function aleatorio(min,max){
     promo = Math.round(Math.random() * (max - min) + min); 
     return promo
@@ -100,7 +59,6 @@ let nro;
 aleatorio(1,5);
 
 promocion(promo);
-setTimeout(codigoPromo(opcion),1000);
+codigoPromo(opcion);
 
 
-*/

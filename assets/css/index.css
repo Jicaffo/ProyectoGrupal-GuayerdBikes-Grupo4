@@ -1,5 +1,5 @@
 img {
-    width: 100%;
+    max-width: 100%;
 }
 
 #main-wrapper {
@@ -8,4 +8,19 @@ img {
 
 #banner-wrapper {
     padding-top: 8em;   /*LUCHO*/    
+}
+
+#ancho-imagen-banner{
+    width: 100%;
+}
+
+.contenedor-parrafos {
+    /* border: solid 1px orangered; */
+    padding: 1em;
+    margin: auto;
+    width: 90%;     
+}
+
+.alinear-parrafos-index {   
+    text-align: justify;    
 }

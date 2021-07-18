@@ -4,6 +4,7 @@
 @import url("index.css");
 @import url("productos.css");
 @import url("contacto.css");
+@import url("ofertasPersonalizadas.css");
 
 /*
 	Verti by HTML5 UP
@@ -1939,14 +1940,12 @@ input, select, textarea {
 	}
 
 	#main-wrapper {
-		/* border: solid 1px red;    EDITADO ABRIL-LUCHO */
-		/* margin: 5px;				EDITADO ABRIL-LUCHO	 */
+		/* border: solid 1px red;    
+		margin: 5px;				 */
 		background: #fff;
-		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
-		/* padding: 10em 0 5em 0;		LUCHO */
-		display:flex;				/*EDITADO ABRIL-LUCHO*/
-		flex-direction: column;		/*LUCHO*/
-		/* align-items: center; */
+		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);	
+		display:flex;				
+		flex-direction: column;		
 	}
 
 	#footer-wrapper {

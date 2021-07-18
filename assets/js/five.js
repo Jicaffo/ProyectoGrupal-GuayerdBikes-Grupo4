@@ -4,7 +4,7 @@
 
 function preguntaOfertas(){
     if(localStorage.getItem("recibirNovedades")){
-        let accederOfertas = confirm("En este momento contamos con ofertas personalizadas, ¿Queres acceder a ellas?");
+        let accederOfertas = confirm("En este momento contamos con ofertas personalizadas, ¿Quieres acceder a ellas?");
         if(accederOfertas){
             window.location.replace("ofertasPersonalizadas.html");
         }

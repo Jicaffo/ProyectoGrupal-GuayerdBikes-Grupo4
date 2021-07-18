@@ -1,14 +1,14 @@
 .products-container {
     /* border: solid 1px orangered; */
     padding: 1em;
-    align-self: center; /*LUCHO*/
-    width: 80%;    
+    margin: auto;
+    width: 90%;    
     display:grid;
     grid-template-columns: 1fr 3fr;
     gap: 0.5em;
 }
 
 .products {
-    padding: 0.5em;         /*LUCHO*/
-    text-align: justify;    /*LUCHO*/
+    padding: 0.5em;         
+    text-align: justify;   
 }

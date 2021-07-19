@@ -12,6 +12,7 @@ img {
 
 #ancho-imagen-banner{
     width: 100%;
+    display: block;
 }
 
 .contenedor-parrafos {

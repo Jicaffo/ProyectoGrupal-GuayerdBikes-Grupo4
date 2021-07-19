@@ -1924,7 +1924,7 @@ input, select, textarea {
 		top: 0;	
 		background-color: #fff;		
 		/*MODIFICACION JUAN: Deja el entramado de fondo original en en header */
-		/*background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+		background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
 		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
 		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
 		background-image: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(255, 0, 0, 0)), url("images/bg01.png");
@@ -1932,7 +1932,7 @@ input, select, textarea {
 		background-position: top left, top left;
 		background-repeat: repeat-x, repeat;
 		background-size: 100% 30em, auto;
-		z-index: 1;*/
+		z-index: 1;
 	}
 
 	#features-wrapper {

@@ -10,7 +10,7 @@
 function ofertarNovedades () {
     if (!localStorage.getItem("recibirNovedades") && localStorage.getItem("mail")) {
 
-        let recibirNovedades = confirm("¿Desea recibir novedades de nuestro sitio web en su e-mail?");
+        let recibirNovedades = confirm("¿Quieres recibir novedades de nuestro sitio web en tu e-mail?");
         
         localStorage.setItem("recibirNovedades", recibirNovedades );
         

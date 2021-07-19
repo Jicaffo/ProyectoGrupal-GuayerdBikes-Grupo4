@@ -1,5 +1,5 @@
 .form-contacto { 
-    width: 600px;
+    max-width: 600px;
     margin: auto;
     background: var(--color-background); /*ver color caja  */
     display: flex;
@@ -22,11 +22,12 @@ form div label {
 
 .horizontal {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
 }
 
 .only-button{
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .botons {
@@ -36,4 +37,29 @@ form div label {
 #map {
     display: block;
     margin: auto;
+}
+
+@media screen and (max-width: 736px) {
+
+    .form-contacto { 
+        max-width: 300px;
+    }
+
+    form div label {
+        font-size: small;
+    }
+
+    .controls, #nombre, #email{
+        max-width: 300px;
+    }
+
+    .horizontal {
+        flex-direction: column;
+    }
+
+    #map {
+        width: 300px;
+        height: 250px;
+    }
+
 }

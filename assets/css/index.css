@@ -25,3 +25,23 @@ img {
 .alinear-parrafos-index {   
     text-align: justify;    
 }
+
+.tabla-index{
+    margin: auto;
+    width: 400px;
+    text-align: center;
+}
+
+.tabla-index th{
+    text-align: center;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.rrss-center{
+    display: flex;
+    justify-content: center;
+    gap: 10px
+}

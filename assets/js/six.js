@@ -46,7 +46,7 @@ function promocion(promo){
 function codigoPromo(opcion){
     if (localStorage.getItem("nombre")){
         let nombre = localStorage.getItem("nombre");
-        alert("Estimado "+nombre+" Gracias por elegirnos! \nLe obsequiamos el código "+opcion+" con su compra")
+        alert("Estimado "+nombre+", Gracias por elegirnos! \nLe obsequiamos el código "+opcion+" con su compra")
     }
 }
 

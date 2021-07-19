@@ -5,7 +5,7 @@
 - 4. Enviar el saludo correspondiente en funcion de ella. */
 
 function saludar(){
-    if(localStorage.getItem("nombre")){
+    if(localStorage.getItem("nombre") && !sessionStorage.getItem("saludado")){
         let fecha = new Date();
         let hora = fecha.getHours();
         let nombre = localStorage.getItem("nombre");
@@ -20,7 +20,9 @@ function saludar(){
         } else if(hora>=19 && hora<=23){
             saludo = "Buenas noches, ";
         } 
-        alert(saludo + nombre);
+        alert(saludo + nombre + "!");
+
+        sessionStorage.setItem("saludado", "true");
     }
 }
 

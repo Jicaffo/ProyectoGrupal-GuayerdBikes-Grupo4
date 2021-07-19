@@ -2025,7 +2025,6 @@ input, select, textarea {
 
 				#nav ul li:hover a, #nav ul li:hover span {
 					background: var(--color-background);
-					color: var(--color-primary);
 				}
 
 				#nav ul li.active a, #nav ul li.active span {
@@ -2038,8 +2037,8 @@ input, select, textarea {
 				}
 
 				#nav ul li.current:hover a {
-					background: var(--color-primary);
-					color: var(--color-background);
+					background: var(--color-background);
+					color: var(--color-secondary);
 				}
 
 	.dropotron {
@@ -2328,7 +2327,7 @@ input, select, textarea {
 		/* Content */
 
 			#content {				
-				border-bottom: solid 1px #e8e8e8;
+				/*border-bottom: solid 1px #e8e8e8; /*MODIFICACION JUAN*/
 				padding-bottom: 4em;
 				margin-bottom: 0 !important;
 			}
@@ -2405,7 +2404,7 @@ input, select, textarea {
 						position: absolute;
 						left: 6px;
 						top: 6px;
-						background: rgba(0, 0, 0, 0.5);
+						background: rgba(0, 0, 0, 0.5); /*Prueba MODIFICACION JUAN*/
 						width: 58px;
 						height: 38px;
 						border-radius: 6px;
@@ -2485,7 +2484,7 @@ input, select, textarea {
 				}
 
 				#navPanel .depth-0 {
-					color: var(--color-text);
+					color: var(--color-secondary); /* MODIFICACION JUAN (Color menú mobile)*/
 					font-weight: 800;
 				}
 

@@ -2651,6 +2651,7 @@ input, select, textarea {
 
 			#banner-wrapper {
 				padding: 0;
+				padding-top: 90px; /* MODIFICACION JUAN PARA QUE NO SE ESCONDA DEBAJO DEL HEADER EN MOBILE (90px es lo que ocupa el header) */
 			}
 
 			#features-wrapper {

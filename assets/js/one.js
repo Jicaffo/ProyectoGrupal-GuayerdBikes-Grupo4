@@ -46,6 +46,7 @@ setTimeout(preguntarGuardarDatos,1000);
 // Se mantiene el guardado en localStorage y se agrega ** enviar los datos al servidor del cliente**
 
 // URL: https://demo2420474.mockable.io/userData (POST)
+// https://ptsv2.com/t/r10gd-1618538020/post
 
 // Formato del objeto:
 // `{
@@ -68,12 +69,12 @@ const userData = {
 
 // console.log(userData)
 
-fetch("https://demo2420474.mockable.io/userData", {
+fetch("https://ptsv2.com/t/r10gd-1618538020/post", {
     method: "post",
     body : JSON.stringify(userData),
     headers : {
-        "content-type" : "application/json",
-        "access-control-allow-origin" : "*"
+        // "content-type" : "application/json",
+        // "access-control-allow-origin" : "*"
     }
 })
 .then(response => {

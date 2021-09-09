@@ -39,3 +39,52 @@ function preguntarGuardarDatos(){
 }
 
 setTimeout(preguntarGuardarDatos,1000);
+
+
+// Para la tarjeta 3 del Proyecto:
+
+// Se mantiene el guardado en localStorage y se agrega ** enviar los datos al servidor del cliente**
+
+// URL: https://demo2420474.mockable.io/userData (POST)
+
+// Formato del objeto:
+// `{
+//     token:"",
+//     name:"",
+//     email:"",
+//     sendEmail: boolean
+//    }`
+
+const tokenGen = () => {
+    return parseInt(Math.random() * (1500) + 1) ;
+}
+
+const userData = {
+    token : tokenGen(),
+    name : localStorage.getItem('nombre'),
+    email :localStorage.getItem('mail'),
+    sendEmail : localStorage.getItem('recibirNovedades'),
+   }
+
+// console.log(userData)
+
+fetch("https://demo2420474.mockable.io/userData", {
+    method: "post",
+    body : JSON.stringify(userData),
+    headers : {
+        "content-type" : "application/json",
+        "access-control-allow-origin" : "*"
+    }
+})
+.then(response => {
+    if (response.ok) {
+        console.log(`Se enviaron los siguientes datos: ${JSON.stringify(userData)}`)
+        return response.text();
+    } else {
+        throw "Error en la llamada Ajax";
+    }
+})
+// .then (text => {
+//     console.log(text);
+// })
+.catch (error => console.log(error));

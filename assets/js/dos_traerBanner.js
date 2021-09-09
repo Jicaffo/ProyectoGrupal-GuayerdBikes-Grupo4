@@ -34,9 +34,9 @@ const isResponseOk = response => {
 fetch('https://demo2420474.mockable.io/getHomeBanner')
     .then( response => isResponseOk(response))
     .then( data => {
-        console.log(data.imgUrl);
-        console.log(data.link);
-        console.log(data.title);
+        // console.log(data.imgUrl);
+        // console.log(data.link);
+        // console.log(data.title);
         banner.src = data.imgUrl;
         banner.alt = data.title;
     })

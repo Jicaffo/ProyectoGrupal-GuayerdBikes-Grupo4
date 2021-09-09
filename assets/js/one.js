@@ -36,6 +36,8 @@ function preguntarGuardarDatos(){
             localStorage.setItem("mail", mail);
         }
     }
+
+
 }
 
 setTimeout(preguntarGuardarDatos,1000);
@@ -69,23 +71,28 @@ const userData = {
 
 // console.log(userData)
 
-fetch("https://ptsv2.com/t/r10gd-1618538020/post", {
-    method: "post",
-    body : JSON.stringify(userData),
-    headers : {
-        // "content-type" : "application/json",   //No se pueden enviar datos de tipo JSON 
-        // "access-control-allow-origin" : "*"    //Esta propiedad tiene que estar seteada en el server y se ve en la resp.
-    }
-})
-.then(response => {
-    if (response.ok) {
-        console.log(`Se enviaron los siguientes datos: ${JSON.stringify(userData)}`)
-        return response.text();
-    } else {
-        throw "Error en la llamada Ajax";
-    }
-})
-// .then (text => {
-//     console.log(text);
-// })
-.catch (error => console.log(error));
+if ( !localStorage.getItem("datosEnviadosAlServidor") ){
+
+    fetch("https://ptsv2.com/t/r10gd-1618538020/post", {
+        method: "post",
+        body : JSON.stringify(userData),
+        headers : {
+            // "content-type" : "application/json",   //No se pueden enviar datos de tipo JSON 
+            // "access-control-allow-origin" : "*"    //Esta propiedad tiene que estar seteada en el server y se ve en la resp.
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log(`Se enviaron los siguientes datos: ${JSON.stringify(userData)}`)
+            return response.text();
+        } else {
+            throw "Error en la llamada Ajax";
+        }
+    })
+    // .then (text => {
+    //     console.log(text);
+    // })
+    .catch (error => console.log(error));
+
+    localStorage.setItem("datosEnviadosAlServidor", true);
+}

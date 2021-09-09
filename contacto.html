@@ -72,7 +72,7 @@
 							<!-- Comienzo del formulario-->
 							<h2 id=padding>Contacto</h2>  <!--LUCHO-->
 							
-							<form action="gracias.html" method="GET" class="form-contacto">
+							<form action="gracias.html" method="POST" class="form-contacto" id="form">
 								<div class="horizontal">
 									<label for="nombre">Nombre: </label>	
 									<input class= "controls" type="text" name="nombre" id="nombre" placeholder="Pedro"/>
@@ -96,7 +96,7 @@
 								</div>
 
                                 <div class="horizontal only-button">
-									<button class="botons" type="submit" name="Enviar">Enviar</button>
+									<button class="botons" type="submit" name="Enviar" id="submit" onclick="sendFormData()">Enviar</button>
 								</div>
 							</form>	
 							<!--Fin del formulario-->
@@ -168,5 +168,6 @@
 			<script src="assets/js/one.js"></script>
 			<script src="assets/js/two.js"></script>
 			<script src="assets/js/six.js"></script>
+			<script src="assets/js/seis_contactoValidacion.js"></script>
 	</body>
 </html>

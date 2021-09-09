@@ -73,8 +73,8 @@ fetch("https://ptsv2.com/t/r10gd-1618538020/post", {
     method: "post",
     body : JSON.stringify(userData),
     headers : {
-        // "content-type" : "application/json",
-        // "access-control-allow-origin" : "*"
+        // "content-type" : "application/json",   //No se pueden enviar datos de tipo JSON 
+        // "access-control-allow-origin" : "*"    //Esta propiedad tiene que estar seteada en el server y se ve en la resp.
     }
 })
 .then(response => {

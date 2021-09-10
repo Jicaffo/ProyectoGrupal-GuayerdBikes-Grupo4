@@ -5,49 +5,19 @@ const traerBanner = () =>{
     console.log("Se está ejecutando traerBanner()")
 
     const banner = document.querySelector("#ancho-imagen-banner");
-
-    // let infoBanner;
-    // const reqBanner = new XMLHttpRequest();
-    // const method = 'GET';
-    // const address = 'http://demo2420474.mockable.io/getHomeBanner';
-    
-    // reqBanner.onreadystatechange = e => {
-    //         if (reqBanner.readyState == 4) {
-    //             if (reqBanner.status == 200) {
-    //                 console.log(reqBanner)
-    //                 infoBanner = JSON.parse(reqBanner.responseText)
-    //                 console.log(infoBanner.imgUrl)
-    //                 banner.src = infoBanner.imgUrl
-    //                 banner.alt = infoBanner.title
-                    
-    //             } else if (reqBanner.status === 404) {
-    //                     console.log("Error");
-    //             } else {
-        
-    //             }
-    //         } 
-    // }
-    // reqBanner.open(method, address);
-    // reqBanner.send();
-    
-    
+ 
     const isResponseOk = response => {
         if (!response.ok)
             throw new Error(response.status);
         return response.json()    
         }
     
-    return fetch('https://demo2420474.mockable.io/getHomeBanner')
+    fetch('https://demo2420474.mockable.io/getHomeBanner')
         .then( response => isResponseOk(response))
         .then( data => {
-            // console.log(data.imgUrl);
-            // console.log(data.link);
-            // console.log(data.title);
             banner.src = data.imgUrl;
             banner.alt = data.title;
             document.querySelector("#link-banner").href = data.link;
-
-            return "Banner Actualizado"
         })
 }
 
@@ -109,20 +79,9 @@ function ofertarNovedades() {
 const sendUserData = () => {
 
     console.log("Se está ejecutando sendUserData()");
-    // Para la tarjeta 3 del Proyecto:
 
-    // Se mantiene el guardado en localStorage y se agrega ** enviar los datos al servidor del cliente**
-
-    // URL: https://demo2420474.mockable.io/userData (POST)
-    // https://ptsv2.com/t/r10gd-1618538020/post
-
-    // Formato del objeto:
-    // `{
-    //     token:"",
-    //     name:"",
-    //     email:"",
-    //     sendEmail: boolean
-    //    }`
+    // Producción: https://demo2420474.mockable.io/userData (POST)
+    // Pruebas: https://ptsv2.com/t/r10gd-1618538020/post
 
     const tokenGen = () => {
         console.log("Se está ejecutando tokenGen()");
@@ -144,27 +103,17 @@ const sendUserData = () => {
         fetch("https://ptsv2.com/t/r10gd-1618538020/post", {
             method: "post",
             body : JSON.stringify(userData),
-            headers : {
-                // "content-type" : "application/json",   //No se pueden enviar datos de tipo JSON 
-                // "access-control-allow-origin" : "*"    //Esta propiedad tiene que estar seteada en el server y se ve en la resp.
-            }
         })
         .then(response => {
             if (response.ok) {
                 localStorage.setItem("tokenEnvio", userData.token);
-                console.log(`Se enviaron los siguientes datos: ${JSON.stringify(userData)}`)
-                //return response.text(); //Si no usamos el 2do "then" para mostrar nada en la consola, no necesitamos devolver nada.
+                console.log(`Se enviaron los siguientes datos: ${JSON.stringify(userData)}`);
             } else {
-                console.log("Problema al enviar");
+                console.log("Problema al enviar"); //Ver por que no está funcionando
                 throw "Error en la llamada Ajax";
             }
         })
-        // .then (text => {
-        //     console.log(text);
-        // })
         .catch (error => console.log(error));
-    
-        
     }
 }
 

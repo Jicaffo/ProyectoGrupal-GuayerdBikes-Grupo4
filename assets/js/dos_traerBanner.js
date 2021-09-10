@@ -39,4 +39,5 @@ fetch('https://demo2420474.mockable.io/getHomeBanner')
         // console.log(data.title);
         banner.src = data.imgUrl;
         banner.alt = data.title;
+        document.querySelector("#link-banner").href = data.link;
     })

@@ -14,7 +14,7 @@ form div label {
     font-size: medium;
 }
 
-.controls, #nombre, #email{
+.controls, #name, #email {
     width: 450px;
     background: var(--color-background);
     border: 3px solid var(--color-primary);
@@ -26,7 +26,7 @@ form div label {
     justify-content: space-between;
 }
 
-.only-button{
+.align-right{
     justify-content: flex-end;
 }
 
@@ -38,6 +38,16 @@ form div label {
     display: block;
     margin: auto;
 }
+
+.alert-text{
+    margin-bottom: 0px !important;
+    color: var(--color-secondary);
+    width: 100%;
+    text-align: end;
+    font-size: small;
+    line-height: 80%;
+}
+
 
 @media screen and (max-width: 736px) {
 
@@ -60,6 +70,10 @@ form div label {
     #map {
         width: 300px;
         height: 250px;
+    }
+
+    .alert-text{
+        text-align: center;
     }
 
 }

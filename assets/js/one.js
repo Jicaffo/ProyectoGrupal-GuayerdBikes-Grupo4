@@ -36,8 +36,6 @@ function preguntarGuardarDatos(){
             localStorage.setItem("mail", mail);
         }
     }
-
-
 }
 
 setTimeout(preguntarGuardarDatos,1000);

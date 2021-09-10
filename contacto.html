@@ -72,32 +72,47 @@
 							<!-- Comienzo del formulario-->
 							<h2 id=padding>Contacto</h2>  <!--LUCHO-->
 							
-							<form action="gracias.html" method="POST" class="form-contacto" id="form">
+							<form action="gracias.html" method="GET" class="form-contacto" id="form">
 								<div class="horizontal">
-									<label for="nombre">Nombre: </label>	
-									<input class= "controls" type="text" name="nombre" id="nombre" placeholder="Pedro"/>
+									<label for="name">Nombre*: </label>	
+									<input class= "controls name" type="text" name="name" id="name" placeholder="Pedro" required/>
 								</div>
+
+								<p class="alert-text" id="name-alert" hidden>El nombre no puede estar vacío</p>
+
 								<div class="horizontal">
-									<label for="email">Email: </label>
-									<input class= "controls" type="email" name="Email" id="email" placeholder="nombre@dominio.com"/>
+									<label for="email">Email*: </label>
+									<input class= "controls email" type="email" name="Email" id="email" placeholder="nombre@dominio.com" required/>
 								</div>
+
+								<p class="alert-text" id="email-alert" hidden>El e-mail no puede estar vacío y debe tener un formato válido</p>
+
 								<div class="horizontal">
-									<label for="tema">Tema: </label>
-									<select class= "controls" name="Tema" id="tema">
+									<label for="subject">Tema*: </label>
+									<select class= "controls" name="subject" id="subject">
+												<option value="" selected hidden>Elija una opción...</option>
 												<option value="venta">Venta</option>
 												<option value="trabajo">Trabajo</option>
 												<option value="reparacion">Reparacion</option>
 												<option value="otros">Otros</option>
 									</select>
 								</div>
+
+								<p class="alert-text" id="subject-alert" hidden>Debe ingresar una opción válida</p>
+
 								<div class="horizontal">
-									<label for="mensaje"> Mensaje: </label>
-									<textarea class="controls" name="Mensaje" cols="30" rows="5" id="mensaje"></textarea>
+									<label for="message"> Mensaje*: </label>
+									<textarea class="controls" name="message" cols="30" rows="5" id="message"></textarea>
 								</div>
 
-                                <div class="horizontal only-button">
-									<button class="botons" type="submit" name="Enviar" id="submit" onclick="sendFormData()">Enviar</button>
+								<p class="alert-text" id="message-alert" hidden>Debe ingresar una opción válida</p>
+
+                                <div class="horizontal align-right">
+									<button class="botons" type="submit" name="Enviar" id="submit" onclick="validateSend(event)">Enviar</button>
 								</div>
+								<div class="horizontal align-right">
+									<p class="align-right">(Los campos indicados con * son obligatorios)</p>
+								</div>	
 							</form>	
 							<!--Fin del formulario-->
 						

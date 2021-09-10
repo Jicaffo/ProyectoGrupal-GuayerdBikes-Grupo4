@@ -7,7 +7,9 @@
 // 1. Si no confirmó, preguntar si quiere recibir mails con novedades.
 // 2. Guardar la respuesta en el localStorage.
 
-function ofertarNovedades () {
+
+//MOVIDO a one.js
+/*function ofertarNovedades () {
     if (!localStorage.getItem("recibirNovedades") && localStorage.getItem("mail")) {
 
         let recibirNovedades = confirm("¿Quieres recibir novedades de nuestro sitio web en tu e-mail?");
@@ -17,4 +19,4 @@ function ofertarNovedades () {
     }
 }
 
-setTimeout(ofertarNovedades,1000);
+setTimeout(ofertarNovedades,1000);*/

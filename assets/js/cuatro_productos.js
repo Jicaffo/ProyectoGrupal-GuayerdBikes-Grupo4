@@ -37,17 +37,19 @@ function loadProducts(){
                 <img class="product-style" src="${productos[i].imgUrl}" alt="Foto de ${productos[i].title}" id="imagen-producto${i}">`;
         
         //En cuanto al precio agregamos diferente código según tenga o no precio con descuento.
-        if (!productos.discountPrice){
+
+        const keyCount = Object.keys(productos[i]).length;
+
+        if (keyCount === 6){
                     
             stringHTML +=
-                `<p class="price-list" id="product${i}-price">${productos[i].price}</p>`;
+                `<p class="price-list" id="product${i}-price"> ${productos[i].currency} ${productos[i].price} </p>`;
                 
         } else {
             
             stringHTML +=
-                `<p class="price-list crossed" id="product${i}-price">$${productos[i].price} ${productos[i].currency}</p>
-                <p class="price-dto" id="product${i}-disc-price">$${productos[i].discountPrice} ${productos[i].currency}</p>`;
-    
+                `<p class="price-list crossed" id="product${i}-price"> ${productos[i].currency} ${productos[i].price} </p>
+                <p class="price-dto" id="product${i}-disc-price"> ${productos[i].currency} ${productos[i].discountPrice} </p>`;    
         }
 
         //Terminamos la ultima parte
@@ -55,9 +57,9 @@ function loadProducts(){
             `</div>
     
             <div class="description-container">
-                <h3 id="product${i}-title">${productos[i].title}</h3>
-                <p class="description" id="product${i}-description">${productos[i].description}</p> 
-                <p class="stock" id="product${i}-stock">${productos[i].inStock} disponibles</p>
+                <h3 id="product${i}-title"> ${productos[i].title} </h3>
+                <p class="description" id="product${i}-description"> ${productos[i].description} </p> 
+                <p class="stock" id="product${i}-stock"> ${productos[i].inStock} disponibles </p>
             </div>`;
     
         //console.log(stringHTML);

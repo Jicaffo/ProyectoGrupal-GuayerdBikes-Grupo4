@@ -11,18 +11,62 @@ fetch('https://demo2420474.mockable.io/productList')
     .then( data => {
         console.log(data);
         productos = data;
-        data.forEach(item => {
-        document.querySelector("#imagen-producto").src = item.imgUrl;
-        document.querySelector("#ceroT").innerHTML = item.title;
-        document.querySelector("#ceroD").innerHTML = item.description;
-        document.querySelector("#ceroP").innerHTML = `$${item.price} ${item.currency}`;
-        document.querySelector("#ceroS").innerHTML = `${item.inStock} disponibles`;
-        document.querySelector("#ceroDe").innerHTML = `$${item.discountPrice} ${item.currency}`;
-        } )
-    }      
-);
+        loadProducts();
+        // data.forEach(item => {
+        //     document.querySelector("#imagen-producto").src = item.imgUrl;
+        //     document.querySelector("#ceroT").innerHTML = item.title;
+        //     document.querySelector("#ceroD").innerHTML = item.description;
+        //     document.querySelector("#ceroP").innerHTML = `$${item.price} ${item.currency}`;
+        //     document.querySelector("#ceroS").innerHTML = `${item.inStock} disponibles`;
+        //     document.querySelector("#ceroDe").innerHTML = `$${item.discountPrice} ${item.currency}`;
+        // })
+    });
        
     
+// (POSIBLE PLANTEO, a meter dentro del then)
+//Obtenemos el "padre" que contiene a todos los productos
+const contenedorProductos = document.querySelector("#products-container");
+
+function loadProducts(){
+
+    for (let i = 0; i < productos.length; i++) {
+    
+        //Armamos un string con el código HTML de cada producto, aprovechando "i" para generar los IDs dinámicamente
+        let stringHTML = 
+            `<div class = "product-img">
+                <img class="product-style" src="${productos[i].imgUrl}" alt="Foto de ${productos[i].title}" id="imagen-producto${i}">`;
+        
+        //En cuanto al precio agregamos diferente código según tenga o no precio con descuento.
+        if (!productos.discountPrice){
+                    
+            stringHTML +=
+                `<p class="price-list" id="product${i}-price">${productos[i].price}</p>`;
+                
+        } else {
+            
+            stringHTML +=
+                `<p class="price-list crossed" id="product${i}-price">$${productos[i].price} ${productos[i].currency}</p>
+                <p class="price-dto" id="product${i}-disc-price">$${productos[i].discountPrice} ${productos[i].currency}</p>`;
+    
+        }
+
+        //Terminamos la ultima parte
+        stringHTML +=
+            `</div>
+    
+            <div class="description-container">
+                <h3 id="product${i}-title">${productos[i].title}</h3>
+                <p class="description" id="product${i}-description">${productos[i].description}</p> 
+                <p class="stock" id="product${i}-stock">${productos[i].inStock} disponibles</p>
+            </div>`;
+    
+        //console.log(stringHTML);
+    
+        //Agregamos el html al DOM, dentro del elemento "contenedorProductos" (al final)
+        contenedorProductos.insertAdjacentHTML("beforeend", stringHTML);
+    }
+}
+
     
 
 /* document.querySelector("#imagen-producto").src = data[0].imgUrl;

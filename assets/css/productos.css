@@ -8,7 +8,46 @@
     gap: 0.5em;
 }
 
-.products {
+.product-img {
+    padding: 0.5em;         
+    text-align: center;
+}
+
+
+.descrpition-container {
     padding: 0.5em;         
     text-align: justify;   
 }
+
+.price-list{
+    font-size: larger;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-bottom: 0%;
+}
+
+.price-dto{
+    font-size: larger;
+    font-weight: bold;
+    color: var(--color-secondary);
+}
+
+.crossed{
+    text-decoration: line-through;
+    font-size: medium;
+    color: gray;
+    font-weight: normal;
+}
+
+.stock{
+    text-align: end;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--color-primary);
+}
+
+.description{
+    margin-bottom: 0%;
+}
+
+

@@ -101,7 +101,7 @@ const sendUserData = () => {
     
     if ( !localStorage.getItem("tokenEnvio") && localStorage.getItem("recibirNovedades") === "true" ){
         console.log("Intentando enviar al servidor");
-        fetch("https://ptsv2.com/t/r10gd-1618538020/post", {
+        fetch("https://demo2420474.mockable.io/userData", {
             method: "post",
             body : JSON.stringify(userData),
         })

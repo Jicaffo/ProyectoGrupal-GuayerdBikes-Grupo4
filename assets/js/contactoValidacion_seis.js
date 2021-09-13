@@ -57,7 +57,10 @@ const validateSend = (e) => {
 //Envía los datos al servidor
 const sendFormData = () => {
 
-    fetch("https://ptsv2.com/t/r10gd-1618538020/post",{
+    //Test: https://ptsv2.com/t/r10gd-1618538020/post
+    //Producción: https://demo2420474.mockable.io/submitForm
+
+    fetch("https://demo2420474.mockable.io/submitForm",{
         method : "post",
         body : JSON.stringify(datosValidados),
     })
@@ -69,7 +72,7 @@ const sendFormData = () => {
         } else {
             throw "Error en el envío de formulario"
         }
-    })
+    });
 }
 
 const cargarProductosEnSelect = () => {

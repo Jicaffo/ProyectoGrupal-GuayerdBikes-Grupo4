@@ -29,6 +29,7 @@
 		<meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
 
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" href="#">
 
 		<script>
 			(function(h,e,a,t,m,p) {
@@ -56,6 +57,7 @@
 								<ul>
 									<li><a href="index.html">Home</a></li>
 									<li><a href="productos.html">Productos</a></li>
+									<!-- <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li> -->
 									<li class="current"><a href="contacto.html">Contacto</a></li>
 								</ul>
 							</nav>
@@ -88,17 +90,18 @@
 								<p class="alert-text" id="email-alert" hidden>El e-mail no puede estar vacío y debe tener un formato válido</p>
 
 								<div class="horizontal">
-									<label for="subject">Tema*: </label>
-									<select class= "controls" name="subject" id="subject">
+									<label for="product-select">Producto*: </label>
+									<select class= "controls" name="product-select" id="product-select">
 												<option value="" selected hidden>Elija una opción...</option>
-												<option value="venta">Venta</option>
+												<!-- Usado como template -->
+												<!-- <option value="venta">Venta</option>
 												<option value="trabajo">Trabajo</option>
 												<option value="reparacion">Reparacion</option>
-												<option value="otros">Otros</option>
+												<option value="otros">Otros</option> -->
 									</select>
 								</div>
 
-								<p class="alert-text" id="subject-alert" hidden>Debe ingresar una opción válida</p>
+								<p class="alert-text" id="product-select-alert" hidden>Debe ingresar una opción válida</p>
 
 								<div class="horizontal">
 									<label for="message"> Mensaje*: </label>

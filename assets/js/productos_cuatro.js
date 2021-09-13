@@ -1,23 +1,9 @@
 //Obtenemos el "padre" que contiene a todos los productos
 const contenedorProductos = document.querySelector("#products-container");
 
-let productos;
-
-const isResponseOk = response => {
-    if (!response.ok)
-        throw new Error(response.status);
-    return response.json()    
-    }
-
-fetch('https://demo2420474.mockable.io/productList')
-    .then( response => isResponseOk(response))
-    .then( data => {
-        console.log(data);
-        productos = data;
-        loadProducts();        
-    });
-       
-function loadProducts() {
+function showProducts() {
+    
+    console.log("Mostrando productos en pantalla...");
 
     for (let i = 0; i < productos.length; i++) {
     
@@ -57,6 +43,12 @@ function loadProducts() {
         //Agregamos el html al DOM, dentro del elemento "contenedorProductos" (al final)
         contenedorProductos.insertAdjacentHTML("beforeend", stringHTML);
     }
+    console.log("...productos cargados en pantalla.");
+}
+
+const init = () => {
+    return obtenerProductosDelServidor()
+    .then( () => showProducts() ) // En chrome no termina de ca
 }
 
 /* document.querySelector("#imagen-producto").src = data[0].imgUrl;

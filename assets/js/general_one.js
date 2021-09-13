@@ -1,5 +1,26 @@
 // Traído código de archivos "two.js"
 
+let productos;
+
+const obtenerProductosDelServidor = () => {
+    const isResponseOk = response => {
+        if (!response.ok)
+            throw new Error(response.status);
+        return response.json()    
+        }
+    
+    console.log("Obteniendo listado de productos del servidor...")
+
+    return fetch('https://demo2420474.mockable.io/productList')
+        .then( response => isResponseOk(response))
+        .then( data => {
+            console.log("Listado de productos obtenido:")    
+            console.log(data);
+            productos = data;
+            //console.log("llega al final")
+        }).catch(error => console.log("Error en la obtención de productos: "+error));
+
+}
 
 function preguntarGuardarDatos(){
     
@@ -64,7 +85,7 @@ const sendUserData = () => {
     // Pruebas: https://ptsv2.com/t/r10gd-1618538020/post
 
     const tokenGen = () => {
-        console.log("Se está ejecutando tokenGen()");
+        //console.log("Se está ejecutando tokenGen()");
         return parseInt(Math.random() * (1500) + 1) ;
     }
     
@@ -75,7 +96,7 @@ const sendUserData = () => {
         sendEmail : localStorage.getItem('recibirNovedades'),
     }
     
-    console.log("userData:")
+    console.log("Datos de usuario guardados:")
     console.log(userData)
     
     if ( !localStorage.getItem("tokenEnvio") && localStorage.getItem("recibirNovedades") === "true" ){
@@ -89,51 +110,45 @@ const sendUserData = () => {
                 localStorage.setItem("tokenEnvio", userData.token);
                 console.log(`Se enviaron los siguientes datos: ${JSON.stringify(userData)}`);
             } else {
-                console.log("Problema al enviar"); //Ver por que no está funcionando
+                console.log("Problema al enviar"); //Ver por que no está funcionando (en realidad no se si no está funcionando, para probarlo tendría que dar error la respuesta del servidor)
                 throw "Error en la llamada Ajax";
             }
         })
         .catch (error => console.log(error));
+    } else {
+        console.log(`No se han enviado datos al servidor`);
     }
 }
 
 const afterLoad = () => {
-    // Funciona, pero ejecutándose todo simultáneamente, y no en el orden que necesitamos.
-    // (pregunta datos antes de traer el banner, e intenta enviar los datos antes de preguntar por los mismos [como la propiedad recibirNovedades no esta cargada aún, la primer carga del sitio no los envía])
-
-    // traerBanner();
-    preguntarGuardarDatos();
-    preguntarNovedades();
-    sendUserData();    
-
-    //ZONA DE PRUEBAS
-    /*new Promise( (resolve) => {
-        
-        return traerBanner();
-        
-    }).then( (msj) => {
-
-        console.log(msj);
-        /*promesaTraerBanner.then(
-            console.log("Banner cargado")
-            preguntarGuardarDatos();
-            console.log("Datos solicitados")
-        );/
-        
-
-    /*}).then( () => {
-
-        //sendUserData();
-        console.log("Datos enviados al servidor")
     
-    });
-    */
+    new Promise ( (resolve) => resolve())
+    .then( () => init() )
+
+    //Se acceden desde la función "init", que cada página carga con código diferente
+    // .then( rta1 => traerBanner(rta1) ) // SOLO en index.html
+    // .then( rta2 => obtenerProductosDelServidor(rta2)) // SOLO en productos.html y contacto.html
+    // .then( rta3 => showProducts(rta3)) // SOLO en productos
+    // .then( rta4 => cargarProductosEnSelect(rta4)) // SOLO en contacto
+
+    //GENERAL (todas las páginas)
+    .then( () => preguntarGuardarDatos()) // Espera correctamente a la carga del banner
+    .then( () => preguntarNovedades()) // Espera correctamente
+    .then( () => sendUserData()) // Espera correctamente
 }
 
 
 //Pasamos la función preguntarGuardarDatos (como callback) al evento window.onload, que se dispara al terminar de cargar el DOM planteado en el HTML.
-//No reemplaza al 100% el uso anterior ("setTimeout(preguntarGuardarDatos,1000);") porque la carga de imagen es dinámica desde JS, falta encadenar las acciones.
+//No reemplaza al 100% el uso anterior ("setTimeout(preguntarGuardarDatos,1000)") porque la carga de la imagen se hace desde JS (post carga del DOM).
 window.onload = afterLoad;
+
+
+
+
+//-----------------------------------------------------------------------------------
+
+
+
 
 // Orden a lograr: Cargar el DOM básico definido en el HTML (evento window.onload) > Traer imágen del servidor (hasta acá OK)> Preguntar Datos (no está esperando a la imagen) > Preguntar si quiere recibir novedades > Enviar datos al servidor (sí está esperando a preguntar datos).
 

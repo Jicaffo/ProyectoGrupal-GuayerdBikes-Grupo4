@@ -93,4 +93,4 @@ let ofrecerPromo = () => {
     })
 }
 
-ofrecerPromo()
+//ofrecerPromo() //Llamado desde contactoValidacion_seis.js

@@ -1,13 +1,13 @@
 const inputName = document.querySelector("#name");
 const inputEmail = document.querySelector("#email");
-const selectSubject = document.querySelector("#subject");
+const selectProduct = document.querySelector("#product-select");
 const textAMensaje = document.querySelector("#message");
 
 //Se inicializa un objeto definiendo todos los campos como vacíos.
 let datosValidados = {
     name: "",
     email: "",
-    subject: "",
+    product: "",
     message: "" 
 };
 
@@ -45,7 +45,7 @@ const validateSend = (e) => {
     } else if (datosValidados.email === ""){
         inputEmail.focus();
     } else if (datosValidados.subject === ""){
-        selectSubject.focus();
+        selectProduct.focus();
     } else if (datosValidados.message === ""){
         textAMensaje.focus();
     } else {
@@ -70,10 +70,30 @@ const sendFormData = () => {
             throw "Error en el envío de formulario"
         }
     })
-    .catch (error => console.log(error));
+}
+
+const cargarProductosEnSelect = () => {
+    console.log("Cargando productos en Select...");
+
+    for (let i = 0; i < productos.length; i++) {
+    
+        //Armamos un string con el código HTML de cada producto, aprovechando "i" para generar los IDs dinámicamente
+        let stringHTML = `<option value="${productos[i].title}">${productos[i].title}</option>`;
+        
+        //Agregamos el html al DOM, dentro del elemento "contenedorProductos" (al final)
+        selectProduct.insertAdjacentHTML("beforeend", stringHTML);
+    }
+
+    console.log("Productos cargados OK!");
+}
+
+const init = () => {
+    obtenerProductosDelServidor("prueba")
+    .then( () => cargarProductosEnSelect() )
+    .then( () => ofrecerPromo() )
 }
 
 inputName.addEventListener("blur", validateField);
 inputEmail.addEventListener("blur", validateField);
-selectSubject.addEventListener("blur", validateField);
+selectProduct.addEventListener("blur", validateField);
 textAMensaje.addEventListener("blur", validateField);

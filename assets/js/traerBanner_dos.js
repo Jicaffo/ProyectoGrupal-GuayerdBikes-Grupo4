@@ -11,13 +11,15 @@ const traerBanner = () =>{
         return response.json()    
         }
     
-    fetch('https://demo2420474.mockable.io/getHomeBanner')
+    return fetch('https://demo2420474.mockable.io/getHomeBanner')
         .then( response => isResponseOk(response))
         .then( data => {
             banner.src = data.imgUrl;
             banner.alt = data.title;
             document.querySelector("#link-banner").href = data.link;
-        })
+        }).catch(error => console.log("Error en la obtención del Banner: "+error));
 }
 
-traerBanner();
+const init = () => {
+    return traerBanner()
+}

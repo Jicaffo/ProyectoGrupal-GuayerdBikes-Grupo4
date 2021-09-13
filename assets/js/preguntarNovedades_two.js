@@ -8,8 +8,9 @@
 // 2. Guardar la respuesta en el localStorage.
 
 
-//MOVIDO a one.js
-/*function ofertarNovedades () {
+        //MOVIDO a one.js
+
+/*function preguntarNovedades () {
     if (!localStorage.getItem("recibirNovedades") && localStorage.getItem("mail")) {
 
         let recibirNovedades = confirm("¿Quieres recibir novedades de nuestro sitio web en tu e-mail?");

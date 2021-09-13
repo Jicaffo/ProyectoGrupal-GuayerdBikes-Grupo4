@@ -1,25 +1,5 @@
-// Traído código de archivos "two.js" y "dos_traerBaner.js"
+// Traído código de archivos "two.js"
 
-const traerBanner = () =>{
-
-    console.log("Se está ejecutando traerBanner()")
-
-    const banner = document.querySelector("#ancho-imagen-banner");
- 
-    const isResponseOk = response => {
-        if (!response.ok)
-            throw new Error(response.status);
-        return response.json()    
-        }
-    
-    fetch('https://demo2420474.mockable.io/getHomeBanner')
-        .then( response => isResponseOk(response))
-        .then( data => {
-            banner.src = data.imgUrl;
-            banner.alt = data.title;
-            document.querySelector("#link-banner").href = data.link;
-        })
-}
 
 function preguntarGuardarDatos(){
     
@@ -63,7 +43,7 @@ function preguntarGuardarDatos(){
     }
 }
 
-function ofertarNovedades() {
+function preguntarNovedades() {
 
     console.log("Se está ejecutando ofertarNovedades()");
 
@@ -120,11 +100,11 @@ const sendUserData = () => {
 const afterLoad = () => {
     // Funciona, pero ejecutándose todo simultáneamente, y no en el orden que necesitamos.
     // (pregunta datos antes de traer el banner, e intenta enviar los datos antes de preguntar por los mismos [como la propiedad recibirNovedades no esta cargada aún, la primer carga del sitio no los envía])
-    traerBanner();
+
+    // traerBanner();
     preguntarGuardarDatos();
-    ofertarNovedades();
-    sendUserData();
-    
+    preguntarNovedades();
+    sendUserData();    
 
     //ZONA DE PRUEBAS
     /*new Promise( (resolve) => {
